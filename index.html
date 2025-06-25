@@ -420,8 +420,6 @@
 <script>
 (function() {
   // Configurable values
-  const DESKTOP_BASE_WIDTH = 620;
-  const DESKTOP_BASE_HEIGHT = 480;
   const MIN_WIDTH = 380, MAX_WIDTH = 820;
   const MIN_HEIGHT = 360, MAX_HEIGHT = 720;
 
@@ -447,7 +445,6 @@
   let paddleW, paddleH, paddleY, paddleSpeed, paddleRadius;
   let ballRadius, ballSpeed, ballMaxSpeed;
   let colors, brickTypes;
-  let keyDownHandled = {};
   let totalBricks = 0, initialBricks = 0;
 
   // --- AUDIO ---
@@ -618,7 +615,6 @@
     isGameOver = false;
     isVictory = false;
     isPaused = false;
-    keyDownHandled = {};
     setupLevel();
     updateSidebar();
     showMessage('Press Space or Enter to Start');
