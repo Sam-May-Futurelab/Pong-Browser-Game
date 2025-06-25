@@ -5,7 +5,7 @@
   <title>Breakout Clone - Web Designer Gamer Edition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;700;900&display=swap');
     
     :root {
       --neu-bg: #e0e5ec;
@@ -71,30 +71,44 @@
       gap: 32px;
       min-width: 220px;
       width: 240px;
-      padding-top: 20px;
+      padding-top: 40px;
     }
 
     .sidebar h2 {
-      margin: 0 0 16px 0;
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: var(--text-primary);
+      margin: 0 0 20px 0;
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: transparent;
       text-align: center;
       position: relative;
+      font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 50%, #4facfe 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+      filter: drop-shadow(0 2px 4px rgba(102, 126, 234, 0.2));
     }
 
-    .sidebar h2::after {
+    .sidebar h2::before {
       content: '';
       position: absolute;
-      bottom: -8px;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 4px;
-      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-      border-radius: 2px;
-      box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
+      background: radial-gradient(ellipse at center, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: -1;
+      animation: titleGlow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes titleGlow {
+      0% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.05); }
     }
 
     .info-box {
